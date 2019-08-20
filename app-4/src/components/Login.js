@@ -9,26 +9,28 @@ class Login extends Component {
             password: '',
         };
         this.inputUsername = this.inputUsername.bind(this);
+        this.inputPassword = this.inputPassword.bind(this);
+        this.handleLogin = this.handleLogin.bind(this);
     }
 
-    inputUsername(e) {
-        this.setState({username: e.target.value});
+    inputUsername(name) {
+        this.setState({username: name.target.value});
     }
 
-    inputPassword(e) {
-    this.setState({password: e.target.value});
+    inputPassword(pass) {
+        this.setState({password: pass.target.value});
     }
 
-    handleClick() {
-    
+    handleLogin() {
+        alert(`Username: ${this.state.username} Password: ${this.state.password}`);
     }
 
     render() {
         return(
             <div>
-                <input placeholder="username" type="text" onChange={props.inputUsername} />
-                <input placeholder="password" type="password" onChange={props.inputPassword} />
-                <button onChange={props.handleClick}>Login</button>
+                <input placeholder="username" type="text" onChange={this.inputUsername} />
+                <input placeholder="password" type="password" onChange={this.inputPassword} />
+                <button onClick={this.handleLogin}>Login</button>
             </div>
         );
     }
