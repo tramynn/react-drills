@@ -17,8 +17,8 @@ class Todo extends Component {
     }
 
     addTodo() {
-        let list = this.state.list.map((element, index) => {
-            return element + index;
+        let list = this.state.list.map((element) => {
+            return `${element}`;
         }); 
 
         this.setState({
