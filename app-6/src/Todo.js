@@ -17,17 +17,16 @@ class Todo extends Component {
     }
 
     addTodo() {
-        let list = this.state.list.map((element) => {
-            return `${element}`;
-        }); 
-
         this.setState({
             list: [...this.state.list, this.state.userInput],
             userInput: '',
         });
     }
-
+    
     render() {
+        let list = this.state.list.map((element, i) => {
+            return <li key={i}>{element}</li>;
+        }); 
 
         return(
             <div>
@@ -36,7 +35,9 @@ class Todo extends Component {
                 <br />
                 <span> ----- </span>
                 <br />
-                { this.state.list } 
+                <ul className="list-style">
+                    {list}
+                </ul>
             </div>
         )
     }

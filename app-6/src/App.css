@@ -4,3 +4,9 @@
   justify-content: center;
   flex-direction: column;
 }
+
+.list-style {
+  list-style-type: none;
+  text-align: center;
+  margin-left: -40px;
+}
